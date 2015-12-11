@@ -2948,9 +2948,32 @@
                         <field type="float" name="laser_y">laser y</field>
        </message>
 
+       <message id="214" name="RP_LIDAR">
+             <description>Message for RP_LIDAR </description>
+             <field type="float" name="down">distance to ground right downside</field>
+             <field type="float" name="forward_1">distance to ground forward</field>
+             <field type="float" name="forward_2">distance to ground forward</field>
+             <field type="float" name="backward_1">distance to ground backward</field>
+             <field type="float" name="backward_2">distance to ground backward</field>
+       </message>
+     
+       <message id="224" name="FIELD_SIZE">
+             <description>Message for field </description>
+             <field type="float" name="length"> L </field>
+             <field type="float" name="width"> W </field>
+             <field type="float" name="height"> H </field>
+             <field type="uint8_t" name="times"> T </field>
+       </message>
 
-
-
+       <message id="225" name="FIELD_SIZE_CONFIRM">
+             <description>Message to confirm field size </description>
+             <field type="float" name="length"> L </field>
+             <field type="float" name="width"> W </field>
+             <field type="float" name="height"> H </field>
+             <field type="uint8_t" name="times"> T </field>
+             <field type="uint8_t" name="confirm"> if confirmed, value=1 </field>
+       </message>
+       
 
         <message id="241" name="VIBRATION">
             <description>Vibration levels and accelerometer clipping</description>

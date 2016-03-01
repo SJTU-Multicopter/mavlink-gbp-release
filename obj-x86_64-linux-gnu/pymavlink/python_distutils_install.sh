@@ -15,8 +15,8 @@ fi
 
 /usr/bin/env \
     "/usr/bin/python" \
-    "/home/cc/mavlink-gbp-release/pymavlink/setup.py" \
-    build --build-base "/home/cc/mavlink-gbp-release/obj-x86_64-linux-gnu/pymavlink/pybuild" \
+    "/home/shqs/src/crop/mavlink-gbp-release/pymavlink/setup.py" \
+    build --build-base "/home/shqs/src/crop/mavlink-gbp-release/obj-x86_64-linux-gnu/pymavlink/pybuild" \
     install \
     $DESTDIR_ARG \
     --install-layout=deb --prefix="/opt/ros/jade"

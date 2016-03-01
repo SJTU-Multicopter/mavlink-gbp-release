@@ -45,10 +45,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cc/mavlink-gbp-release
+CMAKE_SOURCE_DIR = /home/shqs/src/crop/mavlink-gbp-release
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cc/mavlink-gbp-release/obj-x86_64-linux-gnu
+CMAKE_BINARY_DIR = /home/shqs/src/crop/mavlink-gbp-release/obj-x86_64-linux-gnu
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -106,9 +106,9 @@ install/local/fast: install/local
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cc/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles /home/cc/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shqs/src/crop/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles /home/shqs/src/crop/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cc/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shqs/src/crop/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

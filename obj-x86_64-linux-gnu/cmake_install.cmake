@@ -1,4 +1,4 @@
-# Install script for directory: /home/cc/mavlink-gbp-release
+# Install script for directory: /home/shqs/src/crop/mavlink-gbp-release
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -33,40 +33,40 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Dev")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/mavlink" TYPE FILE FILES "/home/cc/mavlink-gbp-release/obj-x86_64-linux-gnu/config.h")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/mavlink" TYPE FILE FILES "/home/shqs/src/crop/mavlink-gbp-release/obj-x86_64-linux-gnu/config.h")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Dev")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/mavlink" TYPE DIRECTORY FILES "/home/cc/mavlink-gbp-release/obj-x86_64-linux-gnu/include/" FILES_MATCHING REGEX "/[^/]*\\.h[^/]*$")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/mavlink" TYPE DIRECTORY FILES "/home/shqs/src/crop/mavlink-gbp-release/obj-x86_64-linux-gnu/include/" FILES_MATCHING REGEX "/[^/]*\\.h[^/]*$")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Dev")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mavlink" TYPE DIRECTORY FILES "/home/cc/mavlink-gbp-release/obj-x86_64-linux-gnu/src/" FILES_MATCHING REGEX "/[^/]*\\.c[^/]*$")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mavlink" TYPE DIRECTORY FILES "/home/shqs/src/crop/mavlink-gbp-release/obj-x86_64-linux-gnu/src/" FILES_MATCHING REGEX "/[^/]*\\.c[^/]*$")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Dev")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share" TYPE DIRECTORY FILES "/home/cc/mavlink-gbp-release/share/mavlink" FILES_MATCHING REGEX "/[^/]*\\.c[^/]*$")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share" TYPE DIRECTORY FILES "/home/shqs/src/crop/mavlink-gbp-release/share/mavlink" FILES_MATCHING REGEX "/[^/]*\\.c[^/]*$")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "cmake")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mavlink/cmake" TYPE FILE FILES "/home/cc/mavlink-gbp-release/obj-x86_64-linux-gnu/mavlink-config.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mavlink/cmake" TYPE FILE FILES "/home/shqs/src/crop/mavlink-gbp-release/obj-x86_64-linux-gnu/mavlink-config.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "pkgconfig")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/cc/mavlink-gbp-release/obj-x86_64-linux-gnu/mavlink.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/shqs/src/crop/mavlink-gbp-release/obj-x86_64-linux-gnu/mavlink.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "license")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mavlink" TYPE FILE FILES "/home/cc/mavlink-gbp-release/obj-x86_64-linux-gnu/COPYING.txt")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mavlink" TYPE FILE FILES "/home/shqs/src/crop/mavlink-gbp-release/obj-x86_64-linux-gnu/COPYING.txt")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "catkin")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mavlink" TYPE FILE FILES "/home/cc/mavlink-gbp-release/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mavlink" TYPE FILE FILES "/home/shqs/src/crop/mavlink-gbp-release/package.xml")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/cc/mavlink-gbp-release/obj-x86_64-linux-gnu/pymavlink/cmake_install.cmake")
+  include("/home/shqs/src/crop/mavlink-gbp-release/obj-x86_64-linux-gnu/pymavlink/cmake_install.cmake")
 
 endif()
 
@@ -78,5 +78,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/cc/mavlink-gbp-release/obj-x86_64-linux-gnu/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/shqs/src/crop/mavlink-gbp-release/obj-x86_64-linux-gnu/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

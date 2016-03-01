@@ -50,10 +50,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cc/mavlink-gbp-release
+CMAKE_SOURCE_DIR = /home/shqs/src/crop/mavlink-gbp-release
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cc/mavlink-gbp-release/obj-x86_64-linux-gnu
+CMAKE_BINARY_DIR = /home/shqs/src/crop/mavlink-gbp-release/obj-x86_64-linux-gnu
 
 #=============================================================================
 # Target rules for target CMakeFiles/ASLUAV.xml-v1.0.dir
@@ -62,7 +62,7 @@ CMAKE_BINARY_DIR = /home/cc/mavlink-gbp-release/obj-x86_64-linux-gnu
 CMakeFiles/ASLUAV.xml-v1.0.dir/all:
 	$(MAKE) -f CMakeFiles/ASLUAV.xml-v1.0.dir/build.make CMakeFiles/ASLUAV.xml-v1.0.dir/depend
 	$(MAKE) -f CMakeFiles/ASLUAV.xml-v1.0.dir/build.make CMakeFiles/ASLUAV.xml-v1.0.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cc/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles  1
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/shqs/src/crop/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles  1
 	@echo "Built target ASLUAV.xml-v1.0"
 .PHONY : CMakeFiles/ASLUAV.xml-v1.0.dir/all
 
@@ -72,9 +72,9 @@ all: CMakeFiles/ASLUAV.xml-v1.0.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/ASLUAV.xml-v1.0.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cc/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shqs/src/crop/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ASLUAV.xml-v1.0.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cc/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shqs/src/crop/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles 0
 .PHONY : CMakeFiles/ASLUAV.xml-v1.0.dir/rule
 
 # Convenience name for target.
@@ -97,7 +97,7 @@ clean: CMakeFiles/ASLUAV.xml-v1.0.dir/clean
 CMakeFiles/ardupilotmega.xml-v1.0.dir/all:
 	$(MAKE) -f CMakeFiles/ardupilotmega.xml-v1.0.dir/build.make CMakeFiles/ardupilotmega.xml-v1.0.dir/depend
 	$(MAKE) -f CMakeFiles/ardupilotmega.xml-v1.0.dir/build.make CMakeFiles/ardupilotmega.xml-v1.0.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cc/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles  2
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/shqs/src/crop/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles  2
 	@echo "Built target ardupilotmega.xml-v1.0"
 .PHONY : CMakeFiles/ardupilotmega.xml-v1.0.dir/all
 
@@ -107,9 +107,9 @@ all: CMakeFiles/ardupilotmega.xml-v1.0.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/ardupilotmega.xml-v1.0.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cc/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shqs/src/crop/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ardupilotmega.xml-v1.0.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cc/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shqs/src/crop/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles 0
 .PHONY : CMakeFiles/ardupilotmega.xml-v1.0.dir/rule
 
 # Convenience name for target.
@@ -132,7 +132,7 @@ clean: CMakeFiles/ardupilotmega.xml-v1.0.dir/clean
 CMakeFiles/autoquad.xml-v1.0.dir/all:
 	$(MAKE) -f CMakeFiles/autoquad.xml-v1.0.dir/build.make CMakeFiles/autoquad.xml-v1.0.dir/depend
 	$(MAKE) -f CMakeFiles/autoquad.xml-v1.0.dir/build.make CMakeFiles/autoquad.xml-v1.0.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cc/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles  3
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/shqs/src/crop/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles  3
 	@echo "Built target autoquad.xml-v1.0"
 .PHONY : CMakeFiles/autoquad.xml-v1.0.dir/all
 
@@ -142,9 +142,9 @@ all: CMakeFiles/autoquad.xml-v1.0.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/autoquad.xml-v1.0.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cc/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shqs/src/crop/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/autoquad.xml-v1.0.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cc/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shqs/src/crop/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles 0
 .PHONY : CMakeFiles/autoquad.xml-v1.0.dir/rule
 
 # Convenience name for target.
@@ -167,7 +167,7 @@ clean: CMakeFiles/autoquad.xml-v1.0.dir/clean
 CMakeFiles/common.xml-v1.0.dir/all:
 	$(MAKE) -f CMakeFiles/common.xml-v1.0.dir/build.make CMakeFiles/common.xml-v1.0.dir/depend
 	$(MAKE) -f CMakeFiles/common.xml-v1.0.dir/build.make CMakeFiles/common.xml-v1.0.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cc/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles  4
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/shqs/src/crop/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles  4
 	@echo "Built target common.xml-v1.0"
 .PHONY : CMakeFiles/common.xml-v1.0.dir/all
 
@@ -177,9 +177,9 @@ all: CMakeFiles/common.xml-v1.0.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/common.xml-v1.0.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cc/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shqs/src/crop/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/common.xml-v1.0.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cc/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shqs/src/crop/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles 0
 .PHONY : CMakeFiles/common.xml-v1.0.dir/rule
 
 # Convenience name for target.
@@ -202,7 +202,7 @@ clean: CMakeFiles/common.xml-v1.0.dir/clean
 CMakeFiles/matrixpilot.xml-v1.0.dir/all:
 	$(MAKE) -f CMakeFiles/matrixpilot.xml-v1.0.dir/build.make CMakeFiles/matrixpilot.xml-v1.0.dir/depend
 	$(MAKE) -f CMakeFiles/matrixpilot.xml-v1.0.dir/build.make CMakeFiles/matrixpilot.xml-v1.0.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cc/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles  5
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/shqs/src/crop/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles  5
 	@echo "Built target matrixpilot.xml-v1.0"
 .PHONY : CMakeFiles/matrixpilot.xml-v1.0.dir/all
 
@@ -212,9 +212,9 @@ all: CMakeFiles/matrixpilot.xml-v1.0.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/matrixpilot.xml-v1.0.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cc/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shqs/src/crop/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/matrixpilot.xml-v1.0.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cc/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shqs/src/crop/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles 0
 .PHONY : CMakeFiles/matrixpilot.xml-v1.0.dir/rule
 
 # Convenience name for target.
@@ -237,7 +237,7 @@ clean: CMakeFiles/matrixpilot.xml-v1.0.dir/clean
 CMakeFiles/minimal.xml-v1.0.dir/all:
 	$(MAKE) -f CMakeFiles/minimal.xml-v1.0.dir/build.make CMakeFiles/minimal.xml-v1.0.dir/depend
 	$(MAKE) -f CMakeFiles/minimal.xml-v1.0.dir/build.make CMakeFiles/minimal.xml-v1.0.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cc/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles  6
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/shqs/src/crop/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles  6
 	@echo "Built target minimal.xml-v1.0"
 .PHONY : CMakeFiles/minimal.xml-v1.0.dir/all
 
@@ -247,9 +247,9 @@ all: CMakeFiles/minimal.xml-v1.0.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/minimal.xml-v1.0.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cc/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shqs/src/crop/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/minimal.xml-v1.0.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cc/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shqs/src/crop/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles 0
 .PHONY : CMakeFiles/minimal.xml-v1.0.dir/rule
 
 # Convenience name for target.
@@ -272,7 +272,7 @@ clean: CMakeFiles/minimal.xml-v1.0.dir/clean
 CMakeFiles/pixhawk.xml-v1.0.dir/all:
 	$(MAKE) -f CMakeFiles/pixhawk.xml-v1.0.dir/build.make CMakeFiles/pixhawk.xml-v1.0.dir/depend
 	$(MAKE) -f CMakeFiles/pixhawk.xml-v1.0.dir/build.make CMakeFiles/pixhawk.xml-v1.0.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cc/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles  7
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/shqs/src/crop/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles  7
 	@echo "Built target pixhawk.xml-v1.0"
 .PHONY : CMakeFiles/pixhawk.xml-v1.0.dir/all
 
@@ -282,9 +282,9 @@ all: CMakeFiles/pixhawk.xml-v1.0.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/pixhawk.xml-v1.0.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cc/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shqs/src/crop/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/pixhawk.xml-v1.0.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cc/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shqs/src/crop/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles 0
 .PHONY : CMakeFiles/pixhawk.xml-v1.0.dir/rule
 
 # Convenience name for target.
@@ -307,7 +307,7 @@ clean: CMakeFiles/pixhawk.xml-v1.0.dir/clean
 CMakeFiles/python_array_test.xml-v1.0.dir/all:
 	$(MAKE) -f CMakeFiles/python_array_test.xml-v1.0.dir/build.make CMakeFiles/python_array_test.xml-v1.0.dir/depend
 	$(MAKE) -f CMakeFiles/python_array_test.xml-v1.0.dir/build.make CMakeFiles/python_array_test.xml-v1.0.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cc/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles  8
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/shqs/src/crop/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles  8
 	@echo "Built target python_array_test.xml-v1.0"
 .PHONY : CMakeFiles/python_array_test.xml-v1.0.dir/all
 
@@ -317,9 +317,9 @@ all: CMakeFiles/python_array_test.xml-v1.0.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/python_array_test.xml-v1.0.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cc/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shqs/src/crop/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/python_array_test.xml-v1.0.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cc/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shqs/src/crop/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles 0
 .PHONY : CMakeFiles/python_array_test.xml-v1.0.dir/rule
 
 # Convenience name for target.
@@ -342,7 +342,7 @@ clean: CMakeFiles/python_array_test.xml-v1.0.dir/clean
 CMakeFiles/slugs.xml-v1.0.dir/all:
 	$(MAKE) -f CMakeFiles/slugs.xml-v1.0.dir/build.make CMakeFiles/slugs.xml-v1.0.dir/depend
 	$(MAKE) -f CMakeFiles/slugs.xml-v1.0.dir/build.make CMakeFiles/slugs.xml-v1.0.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cc/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles  9
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/shqs/src/crop/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles  9
 	@echo "Built target slugs.xml-v1.0"
 .PHONY : CMakeFiles/slugs.xml-v1.0.dir/all
 
@@ -352,9 +352,9 @@ all: CMakeFiles/slugs.xml-v1.0.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/slugs.xml-v1.0.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cc/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shqs/src/crop/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/slugs.xml-v1.0.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cc/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shqs/src/crop/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles 0
 .PHONY : CMakeFiles/slugs.xml-v1.0.dir/rule
 
 # Convenience name for target.
@@ -377,7 +377,7 @@ clean: CMakeFiles/slugs.xml-v1.0.dir/clean
 CMakeFiles/test.xml-v1.0.dir/all:
 	$(MAKE) -f CMakeFiles/test.xml-v1.0.dir/build.make CMakeFiles/test.xml-v1.0.dir/depend
 	$(MAKE) -f CMakeFiles/test.xml-v1.0.dir/build.make CMakeFiles/test.xml-v1.0.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cc/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles  10
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/shqs/src/crop/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles  10
 	@echo "Built target test.xml-v1.0"
 .PHONY : CMakeFiles/test.xml-v1.0.dir/all
 
@@ -387,9 +387,9 @@ all: CMakeFiles/test.xml-v1.0.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/test.xml-v1.0.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cc/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shqs/src/crop/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test.xml-v1.0.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cc/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shqs/src/crop/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles 0
 .PHONY : CMakeFiles/test.xml-v1.0.dir/rule
 
 # Convenience name for target.
@@ -412,7 +412,7 @@ clean: CMakeFiles/test.xml-v1.0.dir/clean
 CMakeFiles/ualberta.xml-v1.0.dir/all:
 	$(MAKE) -f CMakeFiles/ualberta.xml-v1.0.dir/build.make CMakeFiles/ualberta.xml-v1.0.dir/depend
 	$(MAKE) -f CMakeFiles/ualberta.xml-v1.0.dir/build.make CMakeFiles/ualberta.xml-v1.0.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cc/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles  11
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/shqs/src/crop/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles  11
 	@echo "Built target ualberta.xml-v1.0"
 .PHONY : CMakeFiles/ualberta.xml-v1.0.dir/all
 
@@ -422,9 +422,9 @@ all: CMakeFiles/ualberta.xml-v1.0.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/ualberta.xml-v1.0.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cc/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shqs/src/crop/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ualberta.xml-v1.0.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cc/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shqs/src/crop/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles 0
 .PHONY : CMakeFiles/ualberta.xml-v1.0.dir/rule
 
 # Convenience name for target.

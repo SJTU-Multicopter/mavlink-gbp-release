@@ -2309,7 +2309,7 @@ MAVLINK_MSG_ID_FIELD_SIZE = 224
 MAVLINK_MSG_ID_FIELD_SIZE_CONFIRM = 225
 MAVLINK_MSG_ID_PUMP_CONTROLLER = 234
 MAVLINK_MSG_ID_PUMP_STATUS = 235
-MAVLINK_MSG_ID_VICON = 236
+MAVLINK_MSG_ID_EXTRA_FUNCTION = 236
 MAVLINK_MSG_ID_VIBRATION = 241
 MAVLINK_MSG_ID_HOME_POSITION = 242
 MAVLINK_MSG_ID_SET_HOME_POSITION = 243
@@ -7547,33 +7547,32 @@ class MAVLink_pump_status_message(MAVLink_message):
         def pack(self, mav):
                 return MAVLink_message.pack(self, mav, 115, struct.pack('<ff', self.pump_speed, self.spray_speed))
 
-class MAVLink_vicon_message(MAVLink_message):
+class MAVLink_extra_function_message(MAVLink_message):
         '''
-        Message to see pump speed
+        Message to send bool variables
         '''
-        id = MAVLINK_MSG_ID_VICON
-        name = 'VICON'
-        fieldnames = ['x', 'y', 'z', 'vx', 'vy', 'vz']
-        ordered_fieldnames = [ 'x', 'y', 'z', 'vx', 'vy', 'vz' ]
-        format = '<ffffff'
-        native_format = bytearray('<ffffff', 'ascii')
-        orders = [0, 1, 2, 3, 4, 5]
-        lengths = [1, 1, 1, 1, 1, 1]
-        array_lengths = [0, 0, 0, 0, 0, 0]
-        crc_extra = 2
+        id = MAVLINK_MSG_ID_EXTRA_FUNCTION
+        name = 'EXTRA_FUNCTION'
+        fieldnames = ['obs_avoid_enable', 'laser_height_enable', 'add_one', 'add_two', 'add_three']
+        ordered_fieldnames = [ 'obs_avoid_enable', 'laser_height_enable', 'add_one', 'add_two', 'add_three' ]
+        format = '<BBBBB'
+        native_format = bytearray('<BBBBB', 'ascii')
+        orders = [0, 1, 2, 3, 4]
+        lengths = [1, 1, 1, 1, 1]
+        array_lengths = [0, 0, 0, 0, 0]
+        crc_extra = 192
 
-        def __init__(self, x, y, z, vx, vy, vz):
-                MAVLink_message.__init__(self, MAVLink_vicon_message.id, MAVLink_vicon_message.name)
-                self._fieldnames = MAVLink_vicon_message.fieldnames
-                self.x = x
-                self.y = y
-                self.z = z
-                self.vx = vx
-                self.vy = vy
-                self.vz = vz
+        def __init__(self, obs_avoid_enable, laser_height_enable, add_one, add_two, add_three):
+                MAVLink_message.__init__(self, MAVLink_extra_function_message.id, MAVLink_extra_function_message.name)
+                self._fieldnames = MAVLink_extra_function_message.fieldnames
+                self.obs_avoid_enable = obs_avoid_enable
+                self.laser_height_enable = laser_height_enable
+                self.add_one = add_one
+                self.add_two = add_two
+                self.add_three = add_three
 
         def pack(self, mav):
-                return MAVLink_message.pack(self, mav, 2, struct.pack('<ffffff', self.x, self.y, self.z, self.vx, self.vy, self.vz))
+                return MAVLink_message.pack(self, mav, 192, struct.pack('<BBBBB', self.obs_avoid_enable, self.laser_height_enable, self.add_one, self.add_two, self.add_three))
 
 class MAVLink_vibration_message(MAVLink_message):
         '''
@@ -8142,7 +8141,7 @@ mavlink_map = {
         MAVLINK_MSG_ID_FIELD_SIZE_CONFIRM : MAVLink_field_size_confirm_message,
         MAVLINK_MSG_ID_PUMP_CONTROLLER : MAVLink_pump_controller_message,
         MAVLINK_MSG_ID_PUMP_STATUS : MAVLink_pump_status_message,
-        MAVLINK_MSG_ID_VICON : MAVLink_vicon_message,
+        MAVLINK_MSG_ID_EXTRA_FUNCTION : MAVLink_extra_function_message,
         MAVLINK_MSG_ID_VIBRATION : MAVLink_vibration_message,
         MAVLINK_MSG_ID_HOME_POSITION : MAVLink_home_position_message,
         MAVLINK_MSG_ID_SET_HOME_POSITION : MAVLink_set_home_position_message,
@@ -14044,33 +14043,31 @@ class MAVLink(object):
                 '''
                 return self.send(self.pump_status_encode(pump_speed, spray_speed))
 
-        def vicon_encode(self, x, y, z, vx, vy, vz):
+        def extra_function_encode(self, obs_avoid_enable, laser_height_enable, add_one, add_two, add_three):
                 '''
-                Message to see pump speed
+                Message to send bool variables
 
-                x                         : position x (float)
-                y                         : position y (float)
-                z                         : position z (float)
-                vx                        : velocity x (float)
-                vy                        : velocity y (float)
-                vz                        : velocity z (float)
-
-                '''
-                return MAVLink_vicon_message(x, y, z, vx, vy, vz)
-
-        def vicon_send(self, x, y, z, vx, vy, vz):
-                '''
-                Message to see pump speed
-
-                x                         : position x (float)
-                y                         : position y (float)
-                z                         : position z (float)
-                vx                        : velocity x (float)
-                vy                        : velocity y (float)
-                vz                        : velocity z (float)
+                obs_avoid_enable          : bool for obstacle avoidance (uint8_t)
+                laser_height_enable        : bool for control height by laser (uint8_t)
+                add_one                   : additional function bool 1 (uint8_t)
+                add_two                   : additional function bool 2 (uint8_t)
+                add_three                 : additional function bool 3 (uint8_t)
 
                 '''
-                return self.send(self.vicon_encode(x, y, z, vx, vy, vz))
+                return MAVLink_extra_function_message(obs_avoid_enable, laser_height_enable, add_one, add_two, add_three)
+
+        def extra_function_send(self, obs_avoid_enable, laser_height_enable, add_one, add_two, add_three):
+                '''
+                Message to send bool variables
+
+                obs_avoid_enable          : bool for obstacle avoidance (uint8_t)
+                laser_height_enable        : bool for control height by laser (uint8_t)
+                add_one                   : additional function bool 1 (uint8_t)
+                add_two                   : additional function bool 2 (uint8_t)
+                add_three                 : additional function bool 3 (uint8_t)
+
+                '''
+                return self.send(self.extra_function_encode(obs_avoid_enable, laser_height_enable, add_one, add_two, add_three))
 
         def vibration_encode(self, time_usec, vibration_x, vibration_y, vibration_z, clipping_0, clipping_1, clipping_2):
                 '''

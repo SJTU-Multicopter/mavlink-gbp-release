@@ -1,4 +1,4 @@
-# Install script for directory: /home/cc/mavlink-gbp-release/pymavlink
+# Install script for directory: /home/shqs/src/crop/mavlink-gbp-release/pymavlink
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -33,6 +33,6 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  execute_process(COMMAND "/home/cc/mavlink-gbp-release/obj-x86_64-linux-gnu/pymavlink/python_distutils_install.sh" WORKING_DIRECTORY "/home/cc/mavlink-gbp-release/pymavlink")
+  execute_process(COMMAND "/home/shqs/src/crop/mavlink-gbp-release/obj-x86_64-linux-gnu/pymavlink/python_distutils_install.sh" WORKING_DIRECTORY "/home/shqs/src/crop/mavlink-gbp-release/pymavlink")
 endif()
 

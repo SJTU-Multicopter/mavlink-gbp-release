@@ -4,7 +4,7 @@ endif()
 set(mavlink_CONFIG_INCLUDED TRUE)
 
 set(mavlink_INCLUDE_DIRS "/opt/ros/jade/include")
-set(mavlink_DIALECTS ualberta;python_array_test;minimal;ardupilotmega;pixhawk;common;matrixpilot;autoquad;ASLUAV;test;slugs)
+set(mavlink_DIALECTS python_array_test;minimal;test;slugs;pixhawk;ualberta;common;ASLUAV;autoquad;ardupilotmega;matrixpilot)
 
 foreach(lib )
   set(onelib "${lib}-NOTFOUND")

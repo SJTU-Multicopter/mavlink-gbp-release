@@ -38,10 +38,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cc/mavlink-gbp-release
+CMAKE_SOURCE_DIR = /home/shqs/src/crop/mavlink-gbp-release
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cc/mavlink-gbp-release/obj-x86_64-linux-gnu
+CMAKE_BINARY_DIR = /home/shqs/src/crop/mavlink-gbp-release/obj-x86_64-linux-gnu
 
 # Utility rule file for python_array_test.xml-v1.0.
 
@@ -52,9 +52,9 @@ CMakeFiles/python_array_test.xml-v1.0: python_array_test.xml-v1.0-stamp
 
 python_array_test.xml-v1.0-stamp: ../message_definitions/v1.0/python_array_test.xml
 python_array_test.xml-v1.0-stamp: ../pymavlink/generator/mavgen.py
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cc/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/shqs/src/crop/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating python_array_test.xml-v1.0-stamp"
-	/usr/bin/env PYTHONPATH="/home/cc/mavlink-gbp-release:/opt/ros/jade/lib/python2.7/dist-packages" /usr/bin/python -m pymavlink.tools.mavgen --lang=C --wire-protocol=1.0 --output=include/v1.0 /home/cc/mavlink-gbp-release/message_definitions/v1.0/python_array_test.xml
+	/usr/bin/env PYTHONPATH="/home/shqs/src/crop/mavlink-gbp-release:/opt/ros/jade/lib/python2.7/dist-packages" /usr/bin/python -m pymavlink.tools.mavgen --lang=C --wire-protocol=1.0 --output=include/v1.0 /home/shqs/src/crop/mavlink-gbp-release/message_definitions/v1.0/python_array_test.xml
 	touch python_array_test.xml-v1.0-stamp
 
 python_array_test.xml-v1.0: CMakeFiles/python_array_test.xml-v1.0
@@ -71,6 +71,6 @@ CMakeFiles/python_array_test.xml-v1.0.dir/clean:
 .PHONY : CMakeFiles/python_array_test.xml-v1.0.dir/clean
 
 CMakeFiles/python_array_test.xml-v1.0.dir/depend:
-	cd /home/cc/mavlink-gbp-release/obj-x86_64-linux-gnu && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cc/mavlink-gbp-release /home/cc/mavlink-gbp-release /home/cc/mavlink-gbp-release/obj-x86_64-linux-gnu /home/cc/mavlink-gbp-release/obj-x86_64-linux-gnu /home/cc/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles/python_array_test.xml-v1.0.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/shqs/src/crop/mavlink-gbp-release/obj-x86_64-linux-gnu && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/shqs/src/crop/mavlink-gbp-release /home/shqs/src/crop/mavlink-gbp-release /home/shqs/src/crop/mavlink-gbp-release/obj-x86_64-linux-gnu /home/shqs/src/crop/mavlink-gbp-release/obj-x86_64-linux-gnu /home/shqs/src/crop/mavlink-gbp-release/obj-x86_64-linux-gnu/CMakeFiles/python_array_test.xml-v1.0.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/python_array_test.xml-v1.0.dir/depend
 

@@ -5938,38 +5938,37 @@ static void mavlink_test_pump_status(uint8_t system_id, uint8_t component_id, ma
         MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
 }
 
-static void mavlink_test_vicon(uint8_t system_id, uint8_t component_id, mavlink_message_t *last_msg)
+static void mavlink_test_extra_function(uint8_t system_id, uint8_t component_id, mavlink_message_t *last_msg)
 {
 	mavlink_message_t msg;
         uint8_t buffer[MAVLINK_MAX_PACKET_LEN];
         uint16_t i;
-	mavlink_vicon_t packet_in = {
-		17.0,45.0,73.0,101.0,129.0,157.0
+	mavlink_extra_function_t packet_in = {
+		5,72,139,206,17
     };
-	mavlink_vicon_t packet1, packet2;
+	mavlink_extra_function_t packet1, packet2;
         memset(&packet1, 0, sizeof(packet1));
-        	packet1.x = packet_in.x;
-        	packet1.y = packet_in.y;
-        	packet1.z = packet_in.z;
-        	packet1.vx = packet_in.vx;
-        	packet1.vy = packet_in.vy;
-        	packet1.vz = packet_in.vz;
+        	packet1.obs_avoid_enable = packet_in.obs_avoid_enable;
+        	packet1.laser_height_enable = packet_in.laser_height_enable;
+        	packet1.add_one = packet_in.add_one;
+        	packet1.add_two = packet_in.add_two;
+        	packet1.add_three = packet_in.add_three;
         
         
 
         memset(&packet2, 0, sizeof(packet2));
-	mavlink_msg_vicon_encode(system_id, component_id, &msg, &packet1);
-	mavlink_msg_vicon_decode(&msg, &packet2);
+	mavlink_msg_extra_function_encode(system_id, component_id, &msg, &packet1);
+	mavlink_msg_extra_function_decode(&msg, &packet2);
         MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
 
         memset(&packet2, 0, sizeof(packet2));
-	mavlink_msg_vicon_pack(system_id, component_id, &msg , packet1.x , packet1.y , packet1.z , packet1.vx , packet1.vy , packet1.vz );
-	mavlink_msg_vicon_decode(&msg, &packet2);
+	mavlink_msg_extra_function_pack(system_id, component_id, &msg , packet1.obs_avoid_enable , packet1.laser_height_enable , packet1.add_one , packet1.add_two , packet1.add_three );
+	mavlink_msg_extra_function_decode(&msg, &packet2);
         MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
 
         memset(&packet2, 0, sizeof(packet2));
-	mavlink_msg_vicon_pack_chan(system_id, component_id, MAVLINK_COMM_0, &msg , packet1.x , packet1.y , packet1.z , packet1.vx , packet1.vy , packet1.vz );
-	mavlink_msg_vicon_decode(&msg, &packet2);
+	mavlink_msg_extra_function_pack_chan(system_id, component_id, MAVLINK_COMM_0, &msg , packet1.obs_avoid_enable , packet1.laser_height_enable , packet1.add_one , packet1.add_two , packet1.add_three );
+	mavlink_msg_extra_function_decode(&msg, &packet2);
         MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
 
         memset(&packet2, 0, sizeof(packet2));
@@ -5977,12 +5976,12 @@ static void mavlink_test_vicon(uint8_t system_id, uint8_t component_id, mavlink_
         for (i=0; i<mavlink_msg_get_send_buffer_length(&msg); i++) {
         	comm_send_ch(MAVLINK_COMM_0, buffer[i]);
         }
-	mavlink_msg_vicon_decode(last_msg, &packet2);
+	mavlink_msg_extra_function_decode(last_msg, &packet2);
         MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
         
         memset(&packet2, 0, sizeof(packet2));
-	mavlink_msg_vicon_send(MAVLINK_COMM_1 , packet1.x , packet1.y , packet1.z , packet1.vx , packet1.vy , packet1.vz );
-	mavlink_msg_vicon_decode(last_msg, &packet2);
+	mavlink_msg_extra_function_send(MAVLINK_COMM_1 , packet1.obs_avoid_enable , packet1.laser_height_enable , packet1.add_one , packet1.add_two , packet1.add_three );
+	mavlink_msg_extra_function_decode(last_msg, &packet2);
         MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
 }
 
@@ -6724,7 +6723,7 @@ static void mavlink_test_common(uint8_t system_id, uint8_t component_id, mavlink
 	mavlink_test_field_size_confirm(system_id, component_id, last_msg);
 	mavlink_test_pump_controller(system_id, component_id, last_msg);
 	mavlink_test_pump_status(system_id, component_id, last_msg);
-	mavlink_test_vicon(system_id, component_id, last_msg);
+	mavlink_test_extra_function(system_id, component_id, last_msg);
 	mavlink_test_vibration(system_id, component_id, last_msg);
 	mavlink_test_home_position(system_id, component_id, last_msg);
 	mavlink_test_set_home_position(system_id, component_id, last_msg);

@@ -2,7 +2,7 @@ Package: ros-jade-mavlink
 Version: 2016.03.01-0trusty
 Architecture: amd64
 Maintainer: Vladimir Ermakov <vooon341@gmail.com>
-Installed-Size: 23606
+Installed-Size: 23610
 Depends: libc6 (>= 2.11), python-dev, ros-jade-catkin
 Section: misc
 Priority: extra

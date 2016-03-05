@@ -3051,6 +3051,7 @@
              <field type="float" name="px_2"> x2 </field>
              <field type="float" name="py_2"> y2 </field>
              <field type="float" name="ph_2"> H2 </field>
+             <field type="float" name="yaw"> yaw </field>
        </message>
 
        <message id="225" name="OFFBOARD_SETPOINT_CONFIRM">

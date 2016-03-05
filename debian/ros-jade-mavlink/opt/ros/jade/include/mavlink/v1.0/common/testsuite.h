@@ -5763,7 +5763,7 @@ static void mavlink_test_offboard_setpoint(uint8_t system_id, uint8_t component_
         uint8_t buffer[MAVLINK_MAX_PACKET_LEN];
         uint16_t i;
 	mavlink_offboard_setpoint_t packet_in = {
-		17.0,45.0,73.0,101.0,129.0,157.0,77,144
+		17.0,45.0,73.0,101.0,129.0,157.0,185.0,89,156
     };
 	mavlink_offboard_setpoint_t packet1, packet2;
         memset(&packet1, 0, sizeof(packet1));
@@ -5773,6 +5773,7 @@ static void mavlink_test_offboard_setpoint(uint8_t system_id, uint8_t component_
         	packet1.px_2 = packet_in.px_2;
         	packet1.py_2 = packet_in.py_2;
         	packet1.ph_2 = packet_in.ph_2;
+        	packet1.yaw = packet_in.yaw;
         	packet1.seq = packet_in.seq;
         	packet1.total = packet_in.total;
         
@@ -5784,12 +5785,12 @@ static void mavlink_test_offboard_setpoint(uint8_t system_id, uint8_t component_
         MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
 
         memset(&packet2, 0, sizeof(packet2));
-	mavlink_msg_offboard_setpoint_pack(system_id, component_id, &msg , packet1.seq , packet1.total , packet1.px_1 , packet1.py_1 , packet1.ph_1 , packet1.px_2 , packet1.py_2 , packet1.ph_2 );
+	mavlink_msg_offboard_setpoint_pack(system_id, component_id, &msg , packet1.seq , packet1.total , packet1.px_1 , packet1.py_1 , packet1.ph_1 , packet1.px_2 , packet1.py_2 , packet1.ph_2 , packet1.yaw );
 	mavlink_msg_offboard_setpoint_decode(&msg, &packet2);
         MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
 
         memset(&packet2, 0, sizeof(packet2));
-	mavlink_msg_offboard_setpoint_pack_chan(system_id, component_id, MAVLINK_COMM_0, &msg , packet1.seq , packet1.total , packet1.px_1 , packet1.py_1 , packet1.ph_1 , packet1.px_2 , packet1.py_2 , packet1.ph_2 );
+	mavlink_msg_offboard_setpoint_pack_chan(system_id, component_id, MAVLINK_COMM_0, &msg , packet1.seq , packet1.total , packet1.px_1 , packet1.py_1 , packet1.ph_1 , packet1.px_2 , packet1.py_2 , packet1.ph_2 , packet1.yaw );
 	mavlink_msg_offboard_setpoint_decode(&msg, &packet2);
         MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
 
@@ -5802,7 +5803,7 @@ static void mavlink_test_offboard_setpoint(uint8_t system_id, uint8_t component_
         MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
         
         memset(&packet2, 0, sizeof(packet2));
-	mavlink_msg_offboard_setpoint_send(MAVLINK_COMM_1 , packet1.seq , packet1.total , packet1.px_1 , packet1.py_1 , packet1.ph_1 , packet1.px_2 , packet1.py_2 , packet1.ph_2 );
+	mavlink_msg_offboard_setpoint_send(MAVLINK_COMM_1 , packet1.seq , packet1.total , packet1.px_1 , packet1.py_1 , packet1.ph_1 , packet1.px_2 , packet1.py_2 , packet1.ph_2 , packet1.yaw );
 	mavlink_msg_offboard_setpoint_decode(last_msg, &packet2);
         MAVLINK_ASSERT(memcmp(&packet1, &packet2, sizeof(packet1)) == 0);
 }

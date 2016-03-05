@@ -10,29 +10,31 @@ typedef struct __mavlink_offboard_setpoint_t
  float px_2; ///<  x2 
  float py_2; ///<  y2 
  float ph_2; ///<  H2 
+ float yaw; ///<  yaw 
  uint8_t seq; ///<  sequence
  uint8_t total; ///<  total number
 } mavlink_offboard_setpoint_t;
 
-#define MAVLINK_MSG_ID_OFFBOARD_SETPOINT_LEN 26
-#define MAVLINK_MSG_ID_224_LEN 26
+#define MAVLINK_MSG_ID_OFFBOARD_SETPOINT_LEN 30
+#define MAVLINK_MSG_ID_224_LEN 30
 
-#define MAVLINK_MSG_ID_OFFBOARD_SETPOINT_CRC 194
-#define MAVLINK_MSG_ID_224_CRC 194
+#define MAVLINK_MSG_ID_OFFBOARD_SETPOINT_CRC 101
+#define MAVLINK_MSG_ID_224_CRC 101
 
 
 
 #define MAVLINK_MESSAGE_INFO_OFFBOARD_SETPOINT { \
 	"OFFBOARD_SETPOINT", \
-	8, \
+	9, \
 	{  { "px_1", NULL, MAVLINK_TYPE_FLOAT, 0, 0, offsetof(mavlink_offboard_setpoint_t, px_1) }, \
          { "py_1", NULL, MAVLINK_TYPE_FLOAT, 0, 4, offsetof(mavlink_offboard_setpoint_t, py_1) }, \
          { "ph_1", NULL, MAVLINK_TYPE_FLOAT, 0, 8, offsetof(mavlink_offboard_setpoint_t, ph_1) }, \
          { "px_2", NULL, MAVLINK_TYPE_FLOAT, 0, 12, offsetof(mavlink_offboard_setpoint_t, px_2) }, \
          { "py_2", NULL, MAVLINK_TYPE_FLOAT, 0, 16, offsetof(mavlink_offboard_setpoint_t, py_2) }, \
          { "ph_2", NULL, MAVLINK_TYPE_FLOAT, 0, 20, offsetof(mavlink_offboard_setpoint_t, ph_2) }, \
-         { "seq", NULL, MAVLINK_TYPE_UINT8_T, 0, 24, offsetof(mavlink_offboard_setpoint_t, seq) }, \
-         { "total", NULL, MAVLINK_TYPE_UINT8_T, 0, 25, offsetof(mavlink_offboard_setpoint_t, total) }, \
+         { "yaw", NULL, MAVLINK_TYPE_FLOAT, 0, 24, offsetof(mavlink_offboard_setpoint_t, yaw) }, \
+         { "seq", NULL, MAVLINK_TYPE_UINT8_T, 0, 28, offsetof(mavlink_offboard_setpoint_t, seq) }, \
+         { "total", NULL, MAVLINK_TYPE_UINT8_T, 0, 29, offsetof(mavlink_offboard_setpoint_t, total) }, \
          } \
 }
 
@@ -51,10 +53,11 @@ typedef struct __mavlink_offboard_setpoint_t
  * @param px_2  x2 
  * @param py_2  y2 
  * @param ph_2  H2 
+ * @param yaw  yaw 
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_offboard_setpoint_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg,
-						       uint8_t seq, uint8_t total, float px_1, float py_1, float ph_1, float px_2, float py_2, float ph_2)
+						       uint8_t seq, uint8_t total, float px_1, float py_1, float ph_1, float px_2, float py_2, float ph_2, float yaw)
 {
 #if MAVLINK_NEED_BYTE_SWAP || !MAVLINK_ALIGNED_FIELDS
 	char buf[MAVLINK_MSG_ID_OFFBOARD_SETPOINT_LEN];
@@ -64,8 +67,9 @@ static inline uint16_t mavlink_msg_offboard_setpoint_pack(uint8_t system_id, uin
 	_mav_put_float(buf, 12, px_2);
 	_mav_put_float(buf, 16, py_2);
 	_mav_put_float(buf, 20, ph_2);
-	_mav_put_uint8_t(buf, 24, seq);
-	_mav_put_uint8_t(buf, 25, total);
+	_mav_put_float(buf, 24, yaw);
+	_mav_put_uint8_t(buf, 28, seq);
+	_mav_put_uint8_t(buf, 29, total);
 
         memcpy(_MAV_PAYLOAD_NON_CONST(msg), buf, MAVLINK_MSG_ID_OFFBOARD_SETPOINT_LEN);
 #else
@@ -76,6 +80,7 @@ static inline uint16_t mavlink_msg_offboard_setpoint_pack(uint8_t system_id, uin
 	packet.px_2 = px_2;
 	packet.py_2 = py_2;
 	packet.ph_2 = ph_2;
+	packet.yaw = yaw;
 	packet.seq = seq;
 	packet.total = total;
 
@@ -104,11 +109,12 @@ static inline uint16_t mavlink_msg_offboard_setpoint_pack(uint8_t system_id, uin
  * @param px_2  x2 
  * @param py_2  y2 
  * @param ph_2  H2 
+ * @param yaw  yaw 
  * @return length of the message in bytes (excluding serial stream start sign)
  */
 static inline uint16_t mavlink_msg_offboard_setpoint_pack_chan(uint8_t system_id, uint8_t component_id, uint8_t chan,
 							   mavlink_message_t* msg,
-						           uint8_t seq,uint8_t total,float px_1,float py_1,float ph_1,float px_2,float py_2,float ph_2)
+						           uint8_t seq,uint8_t total,float px_1,float py_1,float ph_1,float px_2,float py_2,float ph_2,float yaw)
 {
 #if MAVLINK_NEED_BYTE_SWAP || !MAVLINK_ALIGNED_FIELDS
 	char buf[MAVLINK_MSG_ID_OFFBOARD_SETPOINT_LEN];
@@ -118,8 +124,9 @@ static inline uint16_t mavlink_msg_offboard_setpoint_pack_chan(uint8_t system_id
 	_mav_put_float(buf, 12, px_2);
 	_mav_put_float(buf, 16, py_2);
 	_mav_put_float(buf, 20, ph_2);
-	_mav_put_uint8_t(buf, 24, seq);
-	_mav_put_uint8_t(buf, 25, total);
+	_mav_put_float(buf, 24, yaw);
+	_mav_put_uint8_t(buf, 28, seq);
+	_mav_put_uint8_t(buf, 29, total);
 
         memcpy(_MAV_PAYLOAD_NON_CONST(msg), buf, MAVLINK_MSG_ID_OFFBOARD_SETPOINT_LEN);
 #else
@@ -130,6 +137,7 @@ static inline uint16_t mavlink_msg_offboard_setpoint_pack_chan(uint8_t system_id
 	packet.px_2 = px_2;
 	packet.py_2 = py_2;
 	packet.ph_2 = ph_2;
+	packet.yaw = yaw;
 	packet.seq = seq;
 	packet.total = total;
 
@@ -154,7 +162,7 @@ static inline uint16_t mavlink_msg_offboard_setpoint_pack_chan(uint8_t system_id
  */
 static inline uint16_t mavlink_msg_offboard_setpoint_encode(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg, const mavlink_offboard_setpoint_t* offboard_setpoint)
 {
-	return mavlink_msg_offboard_setpoint_pack(system_id, component_id, msg, offboard_setpoint->seq, offboard_setpoint->total, offboard_setpoint->px_1, offboard_setpoint->py_1, offboard_setpoint->ph_1, offboard_setpoint->px_2, offboard_setpoint->py_2, offboard_setpoint->ph_2);
+	return mavlink_msg_offboard_setpoint_pack(system_id, component_id, msg, offboard_setpoint->seq, offboard_setpoint->total, offboard_setpoint->px_1, offboard_setpoint->py_1, offboard_setpoint->ph_1, offboard_setpoint->px_2, offboard_setpoint->py_2, offboard_setpoint->ph_2, offboard_setpoint->yaw);
 }
 
 /**
@@ -168,7 +176,7 @@ static inline uint16_t mavlink_msg_offboard_setpoint_encode(uint8_t system_id, u
  */
 static inline uint16_t mavlink_msg_offboard_setpoint_encode_chan(uint8_t system_id, uint8_t component_id, uint8_t chan, mavlink_message_t* msg, const mavlink_offboard_setpoint_t* offboard_setpoint)
 {
-	return mavlink_msg_offboard_setpoint_pack_chan(system_id, component_id, chan, msg, offboard_setpoint->seq, offboard_setpoint->total, offboard_setpoint->px_1, offboard_setpoint->py_1, offboard_setpoint->ph_1, offboard_setpoint->px_2, offboard_setpoint->py_2, offboard_setpoint->ph_2);
+	return mavlink_msg_offboard_setpoint_pack_chan(system_id, component_id, chan, msg, offboard_setpoint->seq, offboard_setpoint->total, offboard_setpoint->px_1, offboard_setpoint->py_1, offboard_setpoint->ph_1, offboard_setpoint->px_2, offboard_setpoint->py_2, offboard_setpoint->ph_2, offboard_setpoint->yaw);
 }
 
 /**
@@ -183,10 +191,11 @@ static inline uint16_t mavlink_msg_offboard_setpoint_encode_chan(uint8_t system_
  * @param px_2  x2 
  * @param py_2  y2 
  * @param ph_2  H2 
+ * @param yaw  yaw 
  */
 #ifdef MAVLINK_USE_CONVENIENCE_FUNCTIONS
 
-static inline void mavlink_msg_offboard_setpoint_send(mavlink_channel_t chan, uint8_t seq, uint8_t total, float px_1, float py_1, float ph_1, float px_2, float py_2, float ph_2)
+static inline void mavlink_msg_offboard_setpoint_send(mavlink_channel_t chan, uint8_t seq, uint8_t total, float px_1, float py_1, float ph_1, float px_2, float py_2, float ph_2, float yaw)
 {
 #if MAVLINK_NEED_BYTE_SWAP || !MAVLINK_ALIGNED_FIELDS
 	char buf[MAVLINK_MSG_ID_OFFBOARD_SETPOINT_LEN];
@@ -196,8 +205,9 @@ static inline void mavlink_msg_offboard_setpoint_send(mavlink_channel_t chan, ui
 	_mav_put_float(buf, 12, px_2);
 	_mav_put_float(buf, 16, py_2);
 	_mav_put_float(buf, 20, ph_2);
-	_mav_put_uint8_t(buf, 24, seq);
-	_mav_put_uint8_t(buf, 25, total);
+	_mav_put_float(buf, 24, yaw);
+	_mav_put_uint8_t(buf, 28, seq);
+	_mav_put_uint8_t(buf, 29, total);
 
 #if MAVLINK_CRC_EXTRA
     _mav_finalize_message_chan_send(chan, MAVLINK_MSG_ID_OFFBOARD_SETPOINT, buf, MAVLINK_MSG_ID_OFFBOARD_SETPOINT_LEN, MAVLINK_MSG_ID_OFFBOARD_SETPOINT_CRC);
@@ -212,6 +222,7 @@ static inline void mavlink_msg_offboard_setpoint_send(mavlink_channel_t chan, ui
 	packet.px_2 = px_2;
 	packet.py_2 = py_2;
 	packet.ph_2 = ph_2;
+	packet.yaw = yaw;
 	packet.seq = seq;
 	packet.total = total;
 
@@ -231,7 +242,7 @@ static inline void mavlink_msg_offboard_setpoint_send(mavlink_channel_t chan, ui
   is usually the receive buffer for the channel, and allows a reply to an
   incoming message with minimum stack space usage.
  */
-static inline void mavlink_msg_offboard_setpoint_send_buf(mavlink_message_t *msgbuf, mavlink_channel_t chan,  uint8_t seq, uint8_t total, float px_1, float py_1, float ph_1, float px_2, float py_2, float ph_2)
+static inline void mavlink_msg_offboard_setpoint_send_buf(mavlink_message_t *msgbuf, mavlink_channel_t chan,  uint8_t seq, uint8_t total, float px_1, float py_1, float ph_1, float px_2, float py_2, float ph_2, float yaw)
 {
 #if MAVLINK_NEED_BYTE_SWAP || !MAVLINK_ALIGNED_FIELDS
 	char *buf = (char *)msgbuf;
@@ -241,8 +252,9 @@ static inline void mavlink_msg_offboard_setpoint_send_buf(mavlink_message_t *msg
 	_mav_put_float(buf, 12, px_2);
 	_mav_put_float(buf, 16, py_2);
 	_mav_put_float(buf, 20, ph_2);
-	_mav_put_uint8_t(buf, 24, seq);
-	_mav_put_uint8_t(buf, 25, total);
+	_mav_put_float(buf, 24, yaw);
+	_mav_put_uint8_t(buf, 28, seq);
+	_mav_put_uint8_t(buf, 29, total);
 
 #if MAVLINK_CRC_EXTRA
     _mav_finalize_message_chan_send(chan, MAVLINK_MSG_ID_OFFBOARD_SETPOINT, buf, MAVLINK_MSG_ID_OFFBOARD_SETPOINT_LEN, MAVLINK_MSG_ID_OFFBOARD_SETPOINT_CRC);
@@ -257,6 +269,7 @@ static inline void mavlink_msg_offboard_setpoint_send_buf(mavlink_message_t *msg
 	packet->px_2 = px_2;
 	packet->py_2 = py_2;
 	packet->ph_2 = ph_2;
+	packet->yaw = yaw;
 	packet->seq = seq;
 	packet->total = total;
 
@@ -281,7 +294,7 @@ static inline void mavlink_msg_offboard_setpoint_send_buf(mavlink_message_t *msg
  */
 static inline uint8_t mavlink_msg_offboard_setpoint_get_seq(const mavlink_message_t* msg)
 {
-	return _MAV_RETURN_uint8_t(msg,  24);
+	return _MAV_RETURN_uint8_t(msg,  28);
 }
 
 /**
@@ -291,7 +304,7 @@ static inline uint8_t mavlink_msg_offboard_setpoint_get_seq(const mavlink_messag
  */
 static inline uint8_t mavlink_msg_offboard_setpoint_get_total(const mavlink_message_t* msg)
 {
-	return _MAV_RETURN_uint8_t(msg,  25);
+	return _MAV_RETURN_uint8_t(msg,  29);
 }
 
 /**
@@ -355,6 +368,16 @@ static inline float mavlink_msg_offboard_setpoint_get_ph_2(const mavlink_message
 }
 
 /**
+ * @brief Get field yaw from offboard_setpoint message
+ *
+ * @return  yaw 
+ */
+static inline float mavlink_msg_offboard_setpoint_get_yaw(const mavlink_message_t* msg)
+{
+	return _MAV_RETURN_float(msg,  24);
+}
+
+/**
  * @brief Decode a offboard_setpoint message into a struct
  *
  * @param msg The message to decode
@@ -369,6 +392,7 @@ static inline void mavlink_msg_offboard_setpoint_decode(const mavlink_message_t*
 	offboard_setpoint->px_2 = mavlink_msg_offboard_setpoint_get_px_2(msg);
 	offboard_setpoint->py_2 = mavlink_msg_offboard_setpoint_get_py_2(msg);
 	offboard_setpoint->ph_2 = mavlink_msg_offboard_setpoint_get_ph_2(msg);
+	offboard_setpoint->yaw = mavlink_msg_offboard_setpoint_get_yaw(msg);
 	offboard_setpoint->seq = mavlink_msg_offboard_setpoint_get_seq(msg);
 	offboard_setpoint->total = mavlink_msg_offboard_setpoint_get_total(msg);
 #else

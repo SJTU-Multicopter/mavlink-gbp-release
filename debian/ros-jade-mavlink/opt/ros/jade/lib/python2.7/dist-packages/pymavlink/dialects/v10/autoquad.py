@@ -5697,16 +5697,16 @@ class MAVLink_offboard_setpoint_message(MAVLink_message):
         '''
         id = MAVLINK_MSG_ID_OFFBOARD_SETPOINT
         name = 'OFFBOARD_SETPOINT'
-        fieldnames = ['seq', 'total', 'px_1', 'py_1', 'ph_1', 'px_2', 'py_2', 'ph_2']
-        ordered_fieldnames = [ 'px_1', 'py_1', 'ph_1', 'px_2', 'py_2', 'ph_2', 'seq', 'total' ]
-        format = '<ffffffBB'
-        native_format = bytearray('<ffffffBB', 'ascii')
-        orders = [6, 7, 0, 1, 2, 3, 4, 5]
-        lengths = [1, 1, 1, 1, 1, 1, 1, 1]
-        array_lengths = [0, 0, 0, 0, 0, 0, 0, 0]
-        crc_extra = 194
+        fieldnames = ['seq', 'total', 'px_1', 'py_1', 'ph_1', 'px_2', 'py_2', 'ph_2', 'yaw']
+        ordered_fieldnames = [ 'px_1', 'py_1', 'ph_1', 'px_2', 'py_2', 'ph_2', 'yaw', 'seq', 'total' ]
+        format = '<fffffffBB'
+        native_format = bytearray('<fffffffBB', 'ascii')
+        orders = [7, 8, 0, 1, 2, 3, 4, 5, 6]
+        lengths = [1, 1, 1, 1, 1, 1, 1, 1, 1]
+        array_lengths = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+        crc_extra = 101
 
-        def __init__(self, seq, total, px_1, py_1, ph_1, px_2, py_2, ph_2):
+        def __init__(self, seq, total, px_1, py_1, ph_1, px_2, py_2, ph_2, yaw):
                 MAVLink_message.__init__(self, MAVLink_offboard_setpoint_message.id, MAVLink_offboard_setpoint_message.name)
                 self._fieldnames = MAVLink_offboard_setpoint_message.fieldnames
                 self.seq = seq
@@ -5717,9 +5717,10 @@ class MAVLink_offboard_setpoint_message(MAVLink_message):
                 self.px_2 = px_2
                 self.py_2 = py_2
                 self.ph_2 = ph_2
+                self.yaw = yaw
 
         def pack(self, mav):
-                return MAVLink_message.pack(self, mav, 194, struct.pack('<ffffffBB', self.px_1, self.py_1, self.ph_1, self.px_2, self.py_2, self.ph_2, self.seq, self.total))
+                return MAVLink_message.pack(self, mav, 101, struct.pack('<fffffffBB', self.px_1, self.py_1, self.ph_1, self.px_2, self.py_2, self.ph_2, self.yaw, self.seq, self.total))
 
 class MAVLink_offboard_setpoint_confirm_message(MAVLink_message):
         '''
@@ -10728,7 +10729,7 @@ class MAVLink(object):
                 '''
                 return self.send(self.laser_distance_encode(min_distance, angle, laser_x, laser_y))
 
-        def offboard_setpoint_encode(self, seq, total, px_1, py_1, ph_1, px_2, py_2, ph_2):
+        def offboard_setpoint_encode(self, seq, total, px_1, py_1, ph_1, px_2, py_2, ph_2, yaw):
                 '''
                 Message for field
 
@@ -10740,11 +10741,12 @@ class MAVLink(object):
                 px_2                      : x2 (float)
                 py_2                      : y2 (float)
                 ph_2                      : H2 (float)
+                yaw                       : yaw (float)
 
                 '''
-                return MAVLink_offboard_setpoint_message(seq, total, px_1, py_1, ph_1, px_2, py_2, ph_2)
+                return MAVLink_offboard_setpoint_message(seq, total, px_1, py_1, ph_1, px_2, py_2, ph_2, yaw)
 
-        def offboard_setpoint_send(self, seq, total, px_1, py_1, ph_1, px_2, py_2, ph_2):
+        def offboard_setpoint_send(self, seq, total, px_1, py_1, ph_1, px_2, py_2, ph_2, yaw):
                 '''
                 Message for field
 
@@ -10756,9 +10758,10 @@ class MAVLink(object):
                 px_2                      : x2 (float)
                 py_2                      : y2 (float)
                 ph_2                      : H2 (float)
+                yaw                       : yaw (float)
 
                 '''
-                return self.send(self.offboard_setpoint_encode(seq, total, px_1, py_1, ph_1, px_2, py_2, ph_2))
+                return self.send(self.offboard_setpoint_encode(seq, total, px_1, py_1, ph_1, px_2, py_2, ph_2, yaw))
 
         def offboard_setpoint_confirm_encode(self, seq, total, px_1, py_1, ph_1, px_2, py_2, ph_2):
                 '''

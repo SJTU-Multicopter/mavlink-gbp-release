@@ -1,0 +1,11 @@
+Package: ros-kinetic-mavlink
+Version: 2016.10.12-0xenial
+Architecture: amd64
+Maintainer: Vladimir Ermakov <vooon341@gmail.com>
+Installed-Size: 12519
+Depends: python-dev, ros-kinetic-catkin
+Section: misc
+Priority: extra
+Homepage: http://qgroundcontrol.org/mavlink/
+Description: MAVLink message marshaling library.
+ This package provides C-headers and C++11 library for both 1.0 and 2.0 versions of protocol. For pymavlink use separate install via rosdep (python-pymavlink).
